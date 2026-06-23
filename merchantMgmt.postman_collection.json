@@ -1,0 +1,817 @@
+{
+  "info": {
+    "_postman_id": "55a98984-3a98-4d09-9769-49b62c143f2c",
+    "name": "merchantMgmt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54303018",
+    "_collection_link": "https://go.postman.co/collection/54303018-55a98984-3a98-4d09-9769-49b62c143f2c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "registerAdmin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"adminpassword\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "registerAdmin",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"adminpassword\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "42"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2a-nMoFx54+czTntmSLXl3mqIsZV4A\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 16:59:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"User registered successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "userLogin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"adminpassword\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "userLogin",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"adminpassword\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "208"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"d0-nLQm93lJYaLksZoCR8417jToTYM\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 16:59:50 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Login successfull\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjMzOTkwfQ.Wth-P99MrI-mcx9KuEAaIi4xsRSECasycgsUcza7HHM\",\n    \"role\": \"admin\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "addNewCategory",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bakery\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/categories",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "addNewCategory",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjMzOTkwfQ.Wth-P99MrI-mcx9KuEAaIi4xsRSECasycgsUcza7HHM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Restaurant\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "117"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"75-7NS+FMV38vwUc17EAhLL6feu0hM\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 17:01:07 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Category created successfully\",\n    \"category\": {\n        \"name\": \"Restaurant\",\n        \"_id\": \"6a3abbd314a136bac1948ed9\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "addNewMerchant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"shopName\": \"Siji's pizza\",\n  \"ownerName\": \"Siji\",\n  \"email\": \"sijisPizza@gmail.com\",\n  \"phoneNumber\": \"9876543210\",\n  \"gstin\": \"123456789\",\n  \"address\": \"Kazhakootam\",\n  \"category\": \"6a3aa80a9e49d3d13d78a4d0\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/merchants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "merchants"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "addNewMerchant",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shopName\": \"Siji's pizza\",\n  \"ownerName\": \"Siji\",\n  \"email\": \"sijisPizza@gmail.com\",\n  \"phoneNumber\": \"9876543210\",\n  \"gstin\": \"123456789\",\n  \"address\": \"Kazhakootam\",\n  \"category\": \"6a3abbd314a136bac1948ed9\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/merchants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "merchants"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "333"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"14d-7S9QGrkTSpWA2Amh38GMLZ+y1W4\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 17:01:54 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Merchant registered successfully\",\n    \"merchant\": {\n        \"shopName\": \"Siji's pizza\",\n        \"ownerName\": \"Siji\",\n        \"email\": \"sijisPizza@gmail.com\",\n        \"phoneNumber\": \"9876543210\",\n        \"registrationNumber\": \"78722782\",\n        \"gstin\": \"123456789\",\n        \"address\": \"Kazhakootam\",\n        \"isActive\": true,\n        \"category\": \"6a3abbd314a136bac1948ed9\",\n        \"_id\": \"6a3abc0214a136bac1948eda\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "getAllMerchants",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/merchants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "merchants"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "getAllMerchants",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/merchants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "merchants"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "686"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2ae-0nOT5ABw139lxW/avVpQYWne8CQ\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 17:03:26 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Merchants fetched successfully\",\n    \"merchants\": [\n        {\n            \"_id\": \"6a3abc0214a136bac1948eda\",\n            \"shopName\": \"Siji's pizza\",\n            \"ownerName\": \"Siji\",\n            \"email\": \"sijisPizza@gmail.com\",\n            \"phoneNumber\": \"9876543210\",\n            \"registrationNumber\": \"78722782\",\n            \"gstin\": \"123456789\",\n            \"address\": \"Kazhakootam\",\n            \"isActive\": true,\n            \"category\": {\n                \"_id\": \"6a3abbd314a136bac1948ed9\",\n                \"name\": \"Restaurant\",\n                \"__v\": 0\n            },\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a3abc5814a136bac1948edc\",\n            \"shopName\": \"The burger Junction\",\n            \"ownerName\": \"Tovino\",\n            \"email\": \"tovinoTBJ@gmail.com\",\n            \"phoneNumber\": \"9876543210\",\n            \"registrationNumber\": \"38489498\",\n            \"gstin\": \"123456799\",\n            \"address\": \"kowdiar\",\n            \"isActive\": true,\n            \"category\": {\n                \"_id\": \"6a3abbd314a136bac1948ed9\",\n                \"name\": \"Restaurant\",\n                \"__v\": 0\n            },\n            \"__v\": 0\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "getSingleMerchant",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/merchants/6a3aa8b79e49d3d13d78a4d1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "merchants",
+            "6a3aa8b79e49d3d13d78a4d1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "getSingleMerchant",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/merchants/6a3abc0214a136bac1948eda",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "merchants",
+                "6a3abc0214a136bac1948eda"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "374"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"176-xSqf256hGgkTjE+QgyKlIR4nD9M\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 17:03:52 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Merchant details fetched successfully\",\n    \"merchant\": {\n        \"_id\": \"6a3abc0214a136bac1948eda\",\n        \"shopName\": \"Siji's pizza\",\n        \"ownerName\": \"Siji\",\n        \"email\": \"sijisPizza@gmail.com\",\n        \"phoneNumber\": \"9876543210\",\n        \"registrationNumber\": \"78722782\",\n        \"gstin\": \"123456789\",\n        \"address\": \"Kazhakootam\",\n        \"isActive\": true,\n        \"category\": {\n            \"_id\": \"6a3abbd314a136bac1948ed9\",\n            \"name\": \"Restaurant\",\n            \"__v\": 0\n        },\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "editSIngleMerchant",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"shopName\": \"Sijis Premium pizza\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/merchants/edit/6a3aa8b79e49d3d13d78a4d1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "merchants",
+            "edit",
+            "6a3aa8b79e49d3d13d78a4d1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "editSIngleMerchant",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shopName\": \"Sijis Premium pizza\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/merchants/edit/6a3abc0214a136bac1948eda",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "merchants",
+                "edit",
+                "6a3abc0214a136bac1948eda"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "345"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"159-ZOQe/lDN4hFIKov+1UrHQ3V8k28\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 17:04:12 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Merchant details updated successfully\",\n    \"merchant\": {\n        \"_id\": \"6a3abc0214a136bac1948eda\",\n        \"shopName\": \"Sijis Premium pizza\",\n        \"ownerName\": \"Siji\",\n        \"email\": \"sijisPizza@gmail.com\",\n        \"phoneNumber\": \"9876543210\",\n        \"registrationNumber\": \"78722782\",\n        \"gstin\": \"123456789\",\n        \"address\": \"Kazhakootam\",\n        \"isActive\": true,\n        \"category\": \"6a3abbd314a136bac1948ed9\",\n        \"__v\": 0\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "deleteMerchant",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/merchants/6a3aa8b79e49d3d13d78a4d1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "merchants",
+            "6a3aa8b79e49d3d13d78a4d1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "deleteMerchant",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzgyMjI4NTU4fQ.chrJ6UJAGqp4wEqGXihMfl5jDoo7JPV5vtd7J7qTUOg",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/merchants/6a3abc0214a136bac1948eda",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "merchants",
+                "6a3abc0214a136bac1948eda"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "43"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2b-Bqqmsugo/kiNylOuN/sdhOV2aDc\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 23 Jun 2026 17:04:22 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Merchant deleted successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}

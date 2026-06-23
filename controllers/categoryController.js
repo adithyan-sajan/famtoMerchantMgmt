@@ -22,12 +22,3 @@ exports.addCategory = async (req, res) => {
     }
 };
 
-exports.getAllCategories = async (req, res) => {
-    try {
-        let allCategories = await categoryModel.find();
-        res.status(200).json({ message: "Categories fetched successfully", allCategories });
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: "Something went wrong in Server" });
-    }
-};
